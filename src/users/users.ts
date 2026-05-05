@@ -18,6 +18,11 @@ const UserSchema: Schema = new Schema(
       type: String,
       required: true,
       minlength: 6
+    },
+    role: { // ← agregado
+      type: String,
+      enum: ["user", "admin"],
+      default: "user"
     }
   },
   {
@@ -26,4 +31,3 @@ const UserSchema: Schema = new Schema(
 );
 
 export const User = mongoose.model("Usertest", UserSchema);
-
